@@ -5,8 +5,6 @@ A skeleton for Vagrant projects with Puppet provisioning.
 ## Getting started
 
 ```
-#! bash
-
 $ wget https://github.com/bertvv/vagrant-skeleton/archive/master.zip
 $ unzip master.zip
 $ mv vagrant-skeleton-master my-vagrant-project
