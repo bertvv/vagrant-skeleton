@@ -25,6 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.name = HOST
         vb.customize ["modifyvm", :id, '--cpus', 1 ]
         vb.customize ["modifyvm", :id, '--memory', 512 ]
+        # Fix for extremely slow boot times
+        vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
         # Uncomment if you use another Host-only network
         #vb.customize ["modifyvm", :id, '--hostonlyadapter2', 'vboxnet2']
 
