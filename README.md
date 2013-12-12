@@ -13,7 +13,7 @@ VMs are created with two network interfaces:
 
 ### Shared folders
 
-In addition to the standard directories shared by Vagrant (e.g. `/vagrant`), the project directory is shared as `/etc/puppet`. That way, a lot of things 'just work'. If you use the [documented way](http://docs.vagrantup.com/v2/provisioning/puppet_apply.html) to share folders with the VM, it is hard to set up e.g. the `files/` direcory and Hiera. A `fileserver.conf` and `hiera.conf` is provided that should work as expected.
+In addition to the standard directories shared by Vagrant (e.g. `/vagrant/`), the project directory is shared as `/etc/puppet/`. That way, a lot of things 'just work'. If you use the [documented way](http://docs.vagrantup.com/v2/provisioning/puppet_apply.html) to share folders with the VM, it is hard to set up e.g. the `files/` direcory and Hiera. A `fileserver.conf` and `hiera.conf` is provided that should work as expected.
 
 ### `vagrant_helper.rb`
 
@@ -27,11 +27,11 @@ Thanks to `vagrant_helper.rb`, the definition of a node is much more concise tha
   ).setup
 ```
 
-The only settings that are required are `config:` and `hostname:`. The first one should be left as is, the hostname can be set to your liking, Other settings can be omitted, and in that case a sane default is chosen. See the documentation in `vagrant_helper.rb` for more information.
+The only settings that are required are `config:` and `hostname:`. The first one should be left as is, the hostname can be set to your liking. Other settings can be omitted, and in that case a sane default is chosen. See the documentation in `vagrant_helper.rb` for more information.
 
 ### Node definitions
 
-The manifest file for a specific node should be placed under `manifests/nodes`. There's already a `default.pp` node specification for general settings that can be used to inherit from.
+The manifest file for a specific node should be placed under `manifests/nodes/`. There's already a `default.pp` node specification for general settings that can be used to inherit from.
 
 ### Hiera
 
@@ -46,3 +46,5 @@ Site-specific modules that are kept under source control within this repository 
 ## Contributing
 
 Your feedback, bug reports, or even better, pull requests are greatly appreciated!
+
+(https://github.com/bertvv/vagrant-skeleton)
